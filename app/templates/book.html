@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/book.css' %}" />
+{% endblock css %}
+{% block main %}
+
+<section class="book-section">
+    <div class="book-container">
+        <h1>Books</h1>
+    </div>
+</section>
+
+<section class="books-section">
+   <div class="books-container">
+
+    {% for book in books %}
+      <div class="book-card">
+        <div class="image-container">
+          <img src="{{ book.image.url }}" alt="{{ book.title }}">
+        </div>
+        <p>{{ book.title }}</p>
+        <a href="{{ book.pdf.url }}" class="download-btn" download target="_blank">Download PDF</a>
+        <p class="share-text">Share on:</p>
+<div class="share-buttons">
+  <a href="https://api.whatsapp.com/send?text=Check%20this%20PDF:%20{{ book.full_pdf_url }}" target="_blank" class="btn whatsapp" title="Share on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ book.full_pdf_url }}" target="_blank" class="btn facebook" title="Share on Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+</div>
+      </div>
+    {% endfor %}
+
+    </div>
+</section>
+{% endblock main %}
+
+{% block js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock js %}

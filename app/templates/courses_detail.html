@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/courses-detail.css' %}">
+{% endblock css %}
+
+{% block main %}
+<div class="course-detail-page">
+
+  <!-- Sidebar Left -->
+  <div class="course-sidebar">
+    <h2>Digital Marketing Mastery Program</h2>
+
+      <!-- Section 1 -->
+    <div class="course-section">
+      <h3>Section 1. Understanding Ad Delivery in eCommerce</h3>
+
+      <ul class="video-list">
+        <li class="video-item active" data-video-url="{% static 'video/A1.mp4' %}">
+          <span class="checkbox checked"></span>
+          <span class="video-icon">📹</span>
+          <span class="video-title">1. UX Design Process</span>
+          <span class="video-time">(0:10)</span>
+        </li>
+        <li class="video-item" data-video-url="{% static 'video/A2.mp4' %}">
+          <span class="checkbox"></span>
+          <span class="video-icon">📹</span>
+          <span class="video-title">2. Difference Between UX UI</span>
+          <span class="video-time">(0:10)</span>
+        </li>
+        <li class="video-item" data-video-url="{% static 'video/A3.mp4' %}">
+          <span class="checkbox"></span>
+          <span class="video-icon">📹</span>
+          <span class="video-title">3. Skillset for a UI Designer</span>
+          <span class="video-time">(0:05)</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Add more sections as needed -->
+  <!-- Section 2 -->
+  <div class="course-section">
+      <h3>Section 2. Mastering Ad Creatives for eCommerce</h3>
+
+      <ul class="video-list">
+        <li class="video-item active" data-video-url="{% static 'video/A4.mp4' %}">
+          <span class="checkbox checked"></span>
+          <span class="video-icon">📹</span>
+          <span class="video-title">1. UX Design Process</span>
+          <span class="video-time">(0:05)</span>
+        </li>
+        <li class="video-item" data-video-url="{% static 'video/A5.mp4' %}">
+          <span class="checkbox"></span>
+          <span class="video-icon">📹</span>
+          <span class="video-title">2. Difference Between UX UI</span>
+          <span class="video-time">(0:05)</span>
+        </li>
+        <li class="video-item" data-video-url="{% static 'video/A6.mp4' %}">
+          <span class="checkbox"></span>
+          <span class="video-icon">📹</span>
+          <span class="video-title">3. Skillset for a UI Designer</span>
+          <span class="video-time">(0:05)</span>
+        </li>
+        <li class="video-item" data-video-url="{% static 'video/A7.mp4' %}">
+          <span class="checkbox"></span>
+          <span class="video-icon">📹</span>
+          <span class="video-title">3. Skillset for a UI Designer</span>
+          <span class="video-time">(0:27)</span>
+        </li>
+        <li class="video-item" data-video-url="{% static 'video/A8.mp4' %}">
+          <span class="checkbox"></span>
+          <span class="video-icon">📹</span>
+          <span class="video-title">3. Skillset for a UI Designer</span>
+          <span class="video-time">(0:13)</span>
+        </li>
+        <li class="video-item" data-video-url="{% static 'video/A1.mp4' %}">
+          <span class="checkbox"></span>
+          <span class="video-icon">📹</span>
+          <span class="video-title">3. Skillset for a UI Designer</span>
+          <span class="video-time">(0:10)</span>
+        </li>
+      </ul>
+    </div>
+
+ <!-- Add more sections as needed -->
+  <!-- Section 3 -->
+<div class="course-section">
+      <h3>Section 3. Mastering Ad Creatives for eCommerce</h3>
+
+      <ul class="video-list">
+        <li class="video-item active" data-video-url="{% static 'video/A1.mp4' %}">
+          <span class="checkbox checked"></span>
+          <span class="video-icon">📹</span>
+          <span class="video-title">1. UX Design Process</span>
+          <span class="video-time">(0:10)</span>
+        </li>
+        <li class="video-item" data-video-url="{% static 'video/A2.mp4' %}">
+          <span class="checkbox"></span>
+          <span class="video-icon">📹</span>
+          <span class="video-title">2. Difference Between UX UI</span>
+          <span class="video-time">(0:10)</span>
+        </li>
+        <li class="video-item" data-video-url="{% static 'video/A3.mp4' %}">
+          <span class="checkbox"></span>
+          <span class="video-icon">📹</span>
+          <span class="video-title">3. Skillset for a UI Designer</span>
+          <span class="video-time">(0:05)</span>
+        </li>
+        <li class="video-item active" data-video-url="{% static 'video/A4.mp4' %}">
+          <span class="checkbox checked"></span>
+          <span class="video-icon">📹</span>
+          <span class="video-title">1. UX Design Process</span>
+          <span class="video-time">(0:05)</span>
+        </li>
+        <li class="video-item" data-video-url="{% static 'video/A5.mp4' %}">
+          <span class="checkbox"></span>
+          <span class="video-icon">📹</span>
+          <span class="video-title">2. Difference Between UX UI</span>
+          <span class="video-time">(0:05)</span>
+        </li>
+        <li class="video-item" data-video-url="{% static 'video/A6.mp4' %}">
+          <span class="checkbox"></span>
+          <span class="video-icon">📹</span>
+          <span class="video-title">3. Skillset for a UI Designer</span>
+          <span class="video-time">(0:05)</span>
+        </li>
+
+      </ul>
+    </div>
+
+
+  </div>
+
+  <!-- Main Video Area Right -->
+  <div class="video-area">
+    <video id="videoPlayer" controls autoplay muted playsinline>
+  <source src="{% static 'video/A1.mp4' %}" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+    <button id="nextVideoBtn">Next Video ➡️</button>
+  </div>
+
+</div>
+{% endblock main %}
+
+{% block js %}
+<script>
+  const videoPlayer = document.getElementById("videoPlayer");
+  const videoItems = document.querySelectorAll(".video-item");
+  const nextVideoBtn = document.getElementById("nextVideoBtn");
+
+  let currentIndex = 0;
+
+  function loadVideo(index) {
+    const selected = videoItems[index];
+    videoPlayer.src = selected.dataset.videoUrl;
+    videoPlayer.play();
+
+    videoItems.forEach(item => item.classList.remove("active"));
+    selected.classList.add("active");
+
+    // Mark checkbox as checked
+    videoItems.forEach(item => item.querySelector('.checkbox').classList.remove("checked"));
+    selected.querySelector('.checkbox').classList.add("checked");
+
+    currentIndex = index;
+  }
+
+  videoItems.forEach((item, index) => {
+    item.addEventListener("click", () => loadVideo(index));
+  });
+
+  nextVideoBtn.addEventListener("click", () => {
+    if (currentIndex + 1 < videoItems.length) {
+      loadVideo(currentIndex + 1);
+    }
+  });
+
+  // Pause on blur, play on focus
+  window.addEventListener('blur', () => videoPlayer.pause());
+  window.addEventListener('focus', () => videoPlayer.play());
+
+  // Auto play first video
+  window.onload = () => {
+    loadVideo(0);
+  };
+</script>
+{% endblock js %}

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static "css/video.css" %}" />
+{% endblock css %}
+{% block main %}
+
+<section class="videos-section">
+        <div class="videos-container">
+            <h1>Video</h1>
+        </div>
+      </section>
+        <div class="video-section-text">
+          <p>
+            Our sermons are rooted in Scripture, delivering timeless biblical truths to encourage, challenge, and transform lives. Whether you’re seeking spiritual growth, encouragement, or answers to life’s questions, each sermon is crafted to deepen your faith and draw you closer to God. Explore, learn, and be equipped to live a Christ-centered life.
+          </p>
+        </div>
+{% comment %} <div class="video-grid">
+  <!-- Video 1 -->
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/KHmstX0KTOI" allowfullscreen></iframe>
+    <h4>Holiness of God</h4>
+    <a href="https://www.youtube.com/@ReformedbyTruth_Ministry/videos" target="_blank">Visit Channel</a>
+  </div>
+
+  <!-- Video 2 -->
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/B6EKQCUf9j8" allowfullscreen></iframe>
+    <h4>What is Protestant Reformation ?</h4>
+    <a href="https://www.youtube.com/@ReformedbyTruth_Ministry/videos" target="_blank">Visit Channel</a>
+  </div>
+
+  <!-- Video 3 -->
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/hVSfhMYlmEM" allowfullscreen></iframe>
+    <h4>Famine of hearing the word of God</h4>
+    <a href="https://www.youtube.com/@ReformedbyTruth_Ministry/videos" target="_blank">Visit Channel</a>
+  </div>
+
+  <!-- Video 4 -->
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/yby39iFDvgg" allowfullscreen></iframe>
+    <h4>How to know God’s will in life ?</h4>
+    <a href="https://www.youtube.com/@ReformedbyTruth_Ministry/videos" target="_blank">Visit Channel</a>
+  </div>
+
+  <!-- Video 5 -->
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/z1NhCpApcx0" allowfullscreen></iframe>
+    <h4>History of Pentecostal, Charismatic church Part 1</h4>
+    <a href="https://www.youtube.com/@ReformedbyTruth_Ministry/videos" target="_blank">Visit Channel</a>
+  </div>
+
+  <!-- Video 6 -->
+  <div class="video-card">
+    <iframe src="https://www.youtube.com/embed/LwUe9JOLsPU" allowfullscreen></iframe>
+    <h4>Do biblical miracles still exist ? What was their purpose in the Bible ? </h4>
+    <a href="https://www.youtube.com/@ReformedbyTruth_Ministry/videos" target="_blank">Visit Channel</a>
+  </div>
+</div> {% endcomment %}
+
+<div class="video-grid">
+  {% for video in videos %}
+  <div class="video-card">
+    <iframe src="{{ video.youtube_url }}" allowfullscreen></iframe>
+    <h4>{{ video.title }}</h4>
+    <a href="https://www.youtube.com/@ReformedbyTruth_Ministry/videos" target="_blank">Visit Channel</a>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock main %}
+{% block js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock js %}

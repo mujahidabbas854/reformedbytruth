@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/courses.css' %}" />
+{% endblock css %}
+
+{% block main %}
+<section class="courses-section">
+  <div class="courses-container">
+    <h1>COURSES</h1>
+
+    <div class="card-grid">
+      <!-- Card 1 -->
+      <div class="course-card">
+        <img src="{% static 'images/Courses/Bible_1.jpeg' %}" alt="Course Thumbnail" class="card-img">
+        <p class="card-type">BOOTCAMP</p>
+        <h2>Course Sales Bootcamp: How to Sell Online Courses in 5 Days</h2>
+        <p class="card-description">
+          Learn how to sell your online course by following this 5-day framework to success!
+          This course is for both new course creators launching their first course and
+          more experienced ones looking to increase sales and grow the best wellness.
+        </p>
+        <a href="{% url 'courses_detail' %}" class="enroll-btn">Enroll</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="course-card">
+        <img src="{% static 'images/Courses/Course_1.jpeg' %}" alt="Course Thumbnail" class="card-img">
+        <p class="card-type">WEBINAR</p>
+        <h2>How to find the next profitable course topic</h2>
+        <p class="card-description">
+          Are you struggling to find the topic of your next online course? In this Masterclass,
+          you will learn how to find a profitable subject to teach online.
+        </p>
+        <a href="{% url 'courses_detail' %}" class="enroll-btn">Enroll</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="course-card">
+        <img src="{% static 'images/Courses/Bible_1.jpeg' %}" alt="Course Thumbnail" class="card-img">
+        <p class="card-type">WORKSHOP</p>
+        <h2>Just Launch It! Challenge: Launch a Course in 4 Weeks</h2>
+        <p class="card-description">
+          Create and launch your first online course in less than 4 weeks. The goal of this challenge
+          is to take you from an idea (or even no-idea) to launching your first course within just
+          4-week bootcamp.
+        </p>
+        <a href="{% url 'courses_detail' %}" class="enroll-btn">Enroll</a>
+      </div>
+
+  <!-- Card 4 -->
+<div class="card-grid">
+      <!-- Card 1 -->
+      <div class="course-card">
+        <img src="{% static 'images/Courses/Bible_1.jpeg' %}" alt="Course Thumbnail" class="card-img">
+        <p class="card-type">BOOTCAMP</p>
+        <h2>Course Sales Bootcamp: How to Sell Online Courses in 5 Days</h2>
+        <p class="card-description">
+          Learn how to sell your online course by following this 5-day framework to success!
+          This course is for both new course creators launching their first course and
+          more experienced ones looking to increase sales and grow the best wellness.
+        </p>
+        <a href="{% url 'courses_detail' %}" class="enroll-btn">Enroll</a>
+      </div>
+
+        <!-- Card 5 -->
+<div class="card-grid">
+      <!-- Card 1 -->
+      <div class="course-card">
+        <img src="{% static 'images/Courses/Bible_1.jpeg' %}" alt="Course Thumbnail" class="card-img">
+        <p class="card-type">BOOTCAMP</p>
+        <h2>Course Sales Bootcamp: How to Sell Online Courses in 5 Days</h2>
+        <p class="card-description">
+          Learn how to sell your online course by following this 5-day framework to success!
+          This course is for both new course creators launching their first course and
+          more experienced ones looking to increase sales and grow the best wellness.
+        </p>
+        <a href="{% url 'courses_detail' %}" class="enroll-btn">Enroll</a>
+      </div>
+
+  <!-- Card 6 -->
+<div class="card-grid">
+      <!-- Card 1 -->
+      <div class="course-card">
+        <img src="{% static 'images/Courses/Bible_1.jpeg' %}" alt="Course Thumbnail" class="card-img">
+        <p class="card-type">BOOTCAMP</p>
+        <h2>Course Sales Bootcamp: How to Sell Online Courses in 5 Days</h2>
+        <p class="card-description">
+          Learn how to sell your online course by following this 5-day framework to success!
+          This course is for both new course creators launching their first course and
+          more experienced ones looking to increase sales and grow the best wellness.
+        </p>
+        <a href="{% url 'courses_detail' %}" class="enroll-btn">Enroll</a>
+      </div>
+
+      
+    </div>
+
+  </div>
+</section>
+{% endblock main %}
+
+{% block js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock js %}

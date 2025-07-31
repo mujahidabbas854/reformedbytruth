@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static "css/podcast.css" %}" />
+{% endblock css %}
+{% block main %}
+
+<section class="podcast-section">
+        <div class="podcast-container">
+            <h1>Podcast</h1>
+        </div>
+      
+</section>
+   <div class="podcast-player">
+    <p>
+      The Expository Podcast (Rooh-ki-bedaari) in Hindi/Urdu is a true biblical teaching series that faithfully preaches the Word of God. We preach the gospel of Jesus Christ while preserving the truth of the Bible—both faithfully and historically—through the lens of sound biblical hermeneutics. Our primary focus is to maintain an expository approach, with a deep commitment to the exegesis of the Scripture, where the biblical text itself guides the theme of each episode. <br> <br> 
+      The purpose of this podcast is to help the Hindi/Urdu-speaking church engage with the Bible as it is written, without adding-to or subtracting from its message. This is for the glory of God alone, so that God’s covenant people may know Him and live holy lives before the Holy Covenantal God of the Bible.
+      </div>
+    </p>
+    <div class="gospel-tabs">
+      <div class="tab-buttons">
+        <button class="tab-btn active" onclick="showTab('matthew')">Matthew</button>
+        <button class="tab-btn" onclick="showTab('mark')">Mark</button>
+        <button class="tab-btn" onclick="showTab('luke')">Luke</button>
+        <button class="tab-btn" onclick="showTab('john')">John</button>
+      </div>
+      <div id="matthew" class="tab-content active">
+        <h3>Matthew</h3>
+        {% for podcast in mathew %}
+        <div class="podcast">
+<img src="{{ podcast.cover_image.url }}" alt="Podcast Cover" class="podcast-image" />
+  <div class="podcast-details">
+    
+    <h3>{{ podcast.title }}</h3>
+    <p class="author">Speaker: {{podcast.author}}</p>
+    <div class="audio-player">
+      <audio controls>
+        <source src="{{ podcast.audio_file.url }}" type="audio/mp3">
+      </audio>
+    </div>
+  </div>
+</div>
+{% endfor %}
+      </div>
+
+      <div id="mark" class="tab-content">
+        <h3>Mark</h3>
+        {% if mark %}
+{% for podcast in mark %}
+        <div class="podcast">
+<img src="{{ podcast.cover_image.url }}" alt="Podcast Cover" class="podcast-image" />
+  <div class="podcast-details">
+    
+    <h3>{{ podcast.title }}</h3>
+    <p class="author">Speaker: {{podcast.author}}</p>
+    <div class="audio-player">
+      <audio controls>
+        <source src="{{ podcast.audio_file.url }}" type="audio/mp3">
+      </audio>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% else %}        
+<p>Coming Soon...</p>
+{% endif %}
+      </div>
+
+
+
+<div id="luke" class="tab-content">
+        <h3>Luke</h3>
+        {% if luke %}
+{% for podcast in luke %}
+        <div class="podcast">
+<img src="{{ podcast.cover_image.url }}" alt="Podcast Cover" class="podcast-image" />
+  <div class="podcast-details">
+    
+    <h3>{{ podcast.title }}</h3>
+    <p class="author">Speaker: {{podcast.author}}</p>
+    <div class="audio-player">
+      <audio controls>
+        <source src="{{ podcast.audio_file.url }}" type="audio/mp3">
+      </audio>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% else %}        
+<p>Coming Soon...</p>
+{% endif %}
+      </div>
+
+
+
+      <div id="john" class="tab-content">
+        <h3>John</h3>
+        {% if john %}
+{% for podcast in john %}
+        <div class="podcast">
+<img src="{{ podcast.cover_image.url }}" alt="Podcast Cover" class="podcast-image" />
+  <div class="podcast-details">
+    
+    <h3>{{ podcast.title }}</h3>
+    <p class="author">Speaker: {{podcast.author}}</p>
+    <div class="audio-player">
+      <audio controls>
+        <source src="{{ podcast.audio_file.url }}" type="audio/mp3">
+      </audio>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% else %}        
+<p>Coming Soon...</p>
+{% endif %}
+      </div>
+
+    </div>
+  </div>
+
+{% endblock main %}
+{% block js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock js %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/404.css' %}" />
+{% endblock css %}
+
+{% block main %}
+<section class="full-404">
+  <div class="overlay">
+    <div class="content">
+      <h1>404</h1>
+      <h2>Whale hello there!</h2>
+      <p>Looks like this page is gone. Which makes sense because I ate it. Oooops!</p>
+      <div class="btn-group">
+        <a href="#" class="back-btn">Back</a>
+        <a href="{% url 'home' %}" class="home-btn">Home</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock main %}
+
+{% block js %}
+<script>
+  document.querySelector(".back-btn").onclick = () => window.history.back();
+</script>
+{% endblock js %}

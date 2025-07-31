@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static "css/article-detail.css" %}" />
+{% endblock css %}
+{% block main %}
+
+    <section class="chat-section" style="background: url('{{ article.image.url }}') center/cover no-repeat;">
+        <div class="chat-overlay"></div>
+        <div class="chat-content">
+          <span class="chat-badge"><a href="{% url 'article' %}">ARTICLE(URDU)</a></span>
+          <h1>{{ article.name }}</h1>
+          <div class="chat-meta">    
+            <img src="{{ article.author_image.url}}" alt="Author" class="chat-author-img">
+            <div class="author-info-wrapper">
+              <span class="chat-author-label">AUTHOR</span>
+              <div class="author-date-line">
+                <span class="chat-author-name">{{ article.author_name }}</span>
+                <span class="chat-date"><b>{{ article.created_at }}</b></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="grace-box-section">
+        <div class="grace-box"> 
+          {{ article.description|safe }}
+        </div>
+      </section>
+      <section class="social-share-section">
+        <div class="social-share-container">
+          <h3 class="share-title">Share on</h3>
+          
+          <div class="social-share-buttons">
+
+        <a href="https://wa.me/?text=What%20is%20Covenant%20of%20Grace? - Reformed By Truth%0Ahttps://reformedbytruth.com/what-is-covenant-of-grace/" target="_blank" class="social-btn whatsapp" title="Share on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Freformedbytruth.com%2FWhat%20is%20Covenant%20of%20Grace.html" target="_blank" class="social-btn facebook" title="Share on Facebook">
+  <i class="fab fa-facebook-f"></i>
+</a>
+<button class="social-btn copy-btn" onclick="copyArticleCard()" title="Copy Link">
+        <i class="fas fa-link"></i>
+      </button>
+
+      <!-- ✅ Fixed Popup Message -->
+      <div id="copy-popup">✅ Article copied to clipboard!</div>
+</div>
+
+
+
+
+
+      </section>
+      
+    
+
+     <script>
+function copyArticleCard() {
+  const title = "What is Covenant of Grace?";
+  const link = "https://reformedbytruth.com/What-is-Covenant-of-Grace.html";
+  const site = "Reformed By Truth";
+  const thumbnail = "https://reformedbytruth.com/Articals%20Imges/Article%201.jpeg";
+
+  const formattedText =
+`📖 *${title}*  
+🌐 ${site}  
+🔗 ${link}  
+🖼️ ${thumbnail}`;
+
+  // Copy to clipboard
+  navigator.clipboard.writeText(formattedText).then(() => {
+    const popup = document.getElementById("copy-popup");
+    popup.style.display = "inline";
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 3000);
+  }).catch((err) => {
+    alert("Failed to copy: " + err);
+  });
+}
+</script>
+      
+{% endblock main %}
+{% block js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock js %}

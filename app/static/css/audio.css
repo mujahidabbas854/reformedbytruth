@@ -1,0 +1,115 @@
+/* ===== SERMON PLAYER ===== */
+/* Blog Section Styles */
+.sermon-section {
+  background-color: #f8f9fa;
+  padding: 2rem; /* Match About Us padding */
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sermon-container {
+  max-width: 800px; /* Match About Us max-width */
+  margin: 0 auto;
+  color: #333;
+}
+
+.sermon-container h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: -2.5rem;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.sermon-container h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #e74c3c;
+}
+
+
+
+.sermon-player {
+    padding: 4rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.sermon {
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    padding: 2rem;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ffffff, #f2f2f2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    transition: var(--transition);
+}
+
+.sermon-details p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    padding-right: 10px;
+}
+
+
+.sermon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.sermon-image {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.sermon-details {
+    flex: 1;
+    text-align: left;
+}
+
+.sermon-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+
+
+.audio-player audio {
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .sermon {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sermon-details {
+        text-align: center;
+    }
+
+    .sermon-image {
+        width: 100%;
+        height: auto;
+    }
+}

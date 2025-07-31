@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static "css/audio.css" %}" />
+{% endblock css %}
+{% block main %}
+
+<section class="sermon-section">
+  <div class="sermon-container">
+    <h1>Audio</h1>
+  </div>
+</section>
+
+<div class="sermon-player">
+  <p>
+Our sermons are rooted in Scripture, delivering timeless biblical truths to encourage, challenge, and<br> 
+transform lives. Whether you’re seeking spiritual growth, encouragement, or answers to life’s questions, each<br> 
+sermon is crafted to deepen your faith and draw you closer to God. Explore, learn, and be equipped to live a <br> 
+Christ-centered life.
+  </p>
+</div>
+
+{% for audio in audios %}
+<div class="sermon">
+  <img src="{{ audio.cover_image.url }}" alt="Audio Cover" class="sermon-image" />
+  <div class="sermon-details">
+    <h3>{{ audio.title }}</h3>
+    <p class="author">Author: {{ audio.author }}</p>
+    <div class="audio-player">
+      <audio controls preload="none">
+        <source src="{{ audio.audio_file.url }}" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock main %}
+{% block js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock js %}

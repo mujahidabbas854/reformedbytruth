@@ -1,0 +1,93 @@
+/* Support Us Section Styles */
+.support-section {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.support-container {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #333;
+}
+
+.support-container h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.support-container h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #e74c3c;
+}
+
+.support-method {
+    margin-bottom: 3rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.support-method h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.support-method h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #3498db;
+}
+
+.support-method p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .support-container h1 {
+        font-size: 2rem;
+    }
+
+    .support-method {
+        padding: 1.5rem;
+    }
+
+    .support-method h2 {
+        font-size: 1.3rem;
+    }
+
+    /* .support-method p {
+        font-size: 1rem;
+    } */
+}
+
+.prayer-image img {
+    width: 100%;
+    height: 300px;
+    /* Aap height yahan adjust kar sakte hain */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,43 @@
+{% load static %}  
+  <header class="main-header">
+    <div class="logo">
+      <a href="{% url "home" %}">
+        <img src="{% static 'icons/logo.svg' %}" alt="Reformed By Truth Logo" width="115" height="115" />
+      </a>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu(this)"><i class="fas fa-bars"></i></button>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="{% url "home" %}">Home</a></li>
+        <li><a href="{% url "aboutus" %}">About</a></li>
+        <li class="dropdown-parent">
+          <a href="#" onclick="toggleDropdown(event, this)">Read <i class="fas fa-caret-down dropdown-arrow"></i></a>
+          <div class="dropdown-menu">
+            <ul>
+              <li><a href="{% url "blog" %}"><i class="fas fa-book-bible"></i> Blog</a></li>
+              <li><a href="{% url "article" %}"><i class="fas fa-newspaper"></i> Articles(Urdu)</a></li>
+              <li><a href="{% url "book" %}"><i class="fas fa-blog"></i> Books</a></li>
+              <li><a href="{% url "creed_confession" %}"><i class="fas fa-book"></i> Creeds and Confessions</a></li>
+              <li><a href="{% url "reformed_quotes" %}"><i class="fas fa-question-circle"></i> Reformed Quotes</a></li>
+              <li><a href="{% url "courses" %}"><i class="fas fa-history"></i> Courses</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="dropdown-parent">
+          <a href="#" onclick="toggleDropdown(event, this)">Sermons <i class="fas fa-caret-down dropdown-arrow"></i></a>
+          <div class="dropdown-menu">
+            <ul>
+              <li><a href="{% url "audio" %}"><i class="fas fa-volume-up"></i> Audio</a></li>
+              <li><a href="{% url "video" %}"><i class="fas fa-video"></i> Video</a></li>
+              <li><a href="{% url "podcast" %}"><i class="fas fa-podcast"></i> Podcast</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="{% url "supportus" %}">Support Us</a></li>
+        <li><a href="{% url "contactus" %}">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="https://donate.stripe.com/eVa6pg8kV8lMfMAfYY" target="_blank" class="btn-donate">Donate</a>
+    </div>
+  </header>

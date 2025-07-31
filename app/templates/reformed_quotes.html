@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static "css/reformed_quotes.css" %}" />
+{% endblock css %}
+{% block main %}
+
+<section class="quotes-section">
+    <div class="quotes-container">
+        <h1>Reformed Quotes</h1>
+    </div>
+</section>
+
+<main class="content">
+  <div class="gallery-page" id="gallery-container">
+    {% for quote in quotes %}
+      <div class="gallery-img">
+        <img src="{{ quote.image.url }}" alt="{{ quote.alt_text }}">
+      </div>
+    {% endfor %}
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <span class="close-btn" id="closeBtn">&times;</span>
+      <img id="lightboxImg" src="" alt="Enlarged quote">
+      <a id="downloadBtn" href="#" download class="download-btn">⬇</a>
+    </div>
+  </div>
+</main>
+
+<script>
+    const images = document.querySelectorAll('.gallery-img img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeBtn = document.getElementById('closeBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+        downloadBtn.href = img.src;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+</script>
+
+{% endblock main %}
+{% block js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock js %}

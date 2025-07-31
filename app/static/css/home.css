@@ -1,0 +1,755 @@
+
+/* Content Style */
+
+/* Home Page Section Styles */
+.more-video {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.Donate-button .listen-link {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 20px rgba(255, 65, 108, 0.4);
+  transition: all 0.3s ease-in-out;
+  transform: perspective(1px) translateZ(0);
+  position: relative;
+  overflow: hidden;
+}
+
+.Donate-button .listen-link::after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: skewX(-45deg);
+  transition: 0.5s;
+}
+
+.Donate-button .listen-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(255, 65, 108, 0.6);
+  text-decoration: none;
+}
+
+.Donate-button .listen-link:hover::after {
+  left: 100%;
+}
+
+
+/* slids style */
+.hero-slideshow {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.slide-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--text-light);
+  width: 80%;
+  max-width: 800px;
+}
+
+.slide-text {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slide-verse {
+  font-size: 1.5rem;
+  font-style: italic;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.slide-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent !important;
+  color: #e74c3c;
+  border: none;
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s ease;
+  outline: 0;
+  box-shadow: none;
+}
+
+.slide-nav:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  /* color: #FFFFFF; */
+}
+
+.prev {
+  left: 2rem;
+}
+
+.next {
+  right: 2rem;
+}
+
+.sermon-player {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.sermon {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #f9f9f9, #f1f1f1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sermon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.sermon-image {
+  width: 300px;
+  height: autopx;
+  object-fit: contain;
+  border-radius: 8%;
+}
+
+.sermon-details {
+  flex: 1;
+  min-width: 300px;
+}
+
+.sermon-details h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+  color: #333;
+}
+
+.author {
+  color: #777;
+  font-style: italic;
+}
+
+.audio-player {
+  flex: 1.5;
+  min-width: 300px;
+}
+
+.listen-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #07c;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.audio-player audio {
+  width: 100%;
+  border-radius: 10px;
+  outline: 0;
+}
+
+.listen-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.listen-link:hover {
+  text-decoration: underline;
+}
+
+.video-hero {
+  position: relative;
+  height: 60vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/youtube_thumbnail.jpg") center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+
+.video-overlay {
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.video-overlay h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.video-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.play-btn {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  border: none;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(255, 65, 108, 0.4);
+}
+
+.play-btn::after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: skewX(-45deg);
+  transition: 0.5s;
+}
+
+.play-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(255, 65, 108, 0.6);
+}
+
+.play-btn:hover::after {
+  left: 100%;
+}
+
+.play-btn svg {
+  width: 40px;
+  height: 40px;
+  stroke: #fff;
+  fill: #fff;
+}
+
+.hero-logo {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 300px;
+}
+
+.more-video .listen-link {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 20px rgba(255, 65, 108, 0.4);
+  transition: all 0.3s ease-in-out;
+  transform: perspective(1px) translateZ(0);
+  position: relative;
+  overflow: hidden;
+}
+
+.more-video .listen-link::after {
+  content: "";
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: skewX(-45deg);
+  transition: 0.5s;
+}
+
+.more-video .listen-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(255, 65, 108, 0.6);
+}
+
+.more-video .listen-link:hover::after {
+  left: 100%;
+}
+
+     .article-card h3 {
+    padding: 10px 20px 20px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111;
+    margin: 0;
+  }
+
+  .category {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+  .circle-btn {
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    user-select: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .circle-btn.page-btn.active {
+    background-color: #222; /* black/grey instead of blue */
+    color: white;
+  }
+
+  .circle-btn:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+  }
+/* ===== About Us Button Style (Black Version of Donate) ===== */
+.articles-btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b); /* black gradient */
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.articles-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: skewX(-45deg);
+  transition: left 0.5s ease;
+}
+
+.articles-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.articles-btn:hover::after {
+  left: 100%;
+}
+
+.feature-section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 0.5rem;
+}
+
+.cross-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.cross-image img {
+  width: 65%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-left: 120px;
+  border-radius: 50%;
+}
+
+.feature-content {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.articles-btn {
+  background-color: var(--dark-color);
+  color: #fff;
+  border: none;
+  margin-top: 20px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.articles-btn:hover {
+  background-color: #1a252f;
+}
+
+.cta-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images/cta_img.jfif") center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.cta-content {
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.cta-subtitle {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cta-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* ===== GIVE NOW Button Style (Sharper Parrot Green) ===== */
+.give-btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(255, 65, 108, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.give-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: skewX(-45deg);
+  transition: left 0.5s ease;
+}
+
+.give-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(255, 65, 108, 0.6);
+}
+
+.give-btn:hover::after {
+  left: 100%;
+}
+
+
+.page-btn {
+  display: inline-block;
+  margin: 0 8px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  background-color: #3e2b41;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid #3e2b41;
+  transition: all 0.3s ease;
+}
+
+.page-btn.active {
+  background-color: #7f4f41;
+  border-color: #7f4f41;
+}
+
+.page-btn:hover {
+  background-color: #5a3a3a;
+  border-color: #5a3a3a;
+}
+
+#nextBtn,
+#prevBtn {
+  background-color: #3e2b41;
+  color: #fff;
+  border: 2px solid #3e2b41;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#nextBtn:disabled,
+#prevBtn:disabled {
+  background-color: #7f4f41;
+  border-color: #7f4f41;
+  cursor: not-allowed;
+}
+
+.articles-container {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 300%; /* 3 cards */
+    }
+/* Articles Section Styles */
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .carousel-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+
+.articles-section {
+  text-align: center;
+  padding: 4rem 1rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #2c3e50;
+}
+
+    .articles-section h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4rem;
+  position: relative;
+  display: inline-block;
+}
+
+.articles-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #f53030;
+}
+.articles-carousel {
+  position: relative;
+  max-width: 550px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+    .articles-wrapper {
+      position: relative;
+      max-width: 420px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+ .article-card-link {
+      flex: 0 0 100%;
+      max-width: 100%;
+      opacity: 0.4;
+      pointer-events: none;
+      text-decoration: none;
+      color: inherit;
+      transform: scale(0.95);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+.article-card-link.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1.05);
+    }
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  background: #fdf8f600;
+}
+
+.article-card-link {
+  text-decoration: none;
+}
+
+.article-card {
+  display: block;
+}
+.article-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.blog-img img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+.blog-content {
+  padding: 1rem;
+  background: #fff;
+  border-radius: 0 0 20px 20px;
+}
+
+.blog-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #888;
+}
+
+.blog-content h3 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+    .article-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    .article-card .date {
+    padding: 15px 20px 0;
+    font-size: 0.875rem;
+    color: #666;
+  }
+
+  .article-card .category {
+    padding: 0 20px 20px;
+    font-size: 0.9rem;
+    color: #999;
+  }
+ .arrow {
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: red;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0 10px;
+  user-select: none;
+}
+   .arrow.disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
+ .arrow.left {
+    left: 10px;
+  }
+
+  .arrow.right {
+    right: 10px;
+  }
+
+
+/* Sirf Support section ka font Montserrat set karna */
+.support-section {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+/* Home content pe Montserrat font apply karna */
+/* Aap chahein to selectors adjust kar sakte hain */
+.hero-slideshow,
+.sermon-player,
+.video-hero,
+.more-video,
+.articles-section,
+.feature-section,
+.cta-section {
+  font-family: "Montserrat", sans-serif !important;
+}

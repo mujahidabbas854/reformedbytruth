@@ -1,0 +1,152 @@
+/* Content Style */
+/* ===== YouTube Video Section Styles ===== */
+
+/* Blog Section Styles */
+.videos-section {
+  background-color: #f8f9fa;
+  padding: 2rem; /* Match About Us padding */
+  font-family: 'Montserrat', sans-serif;
+}
+
+.videos-container {
+  max-width: 800px; /* Match About Us max-width */
+  margin: 0 auto;
+  color: #333;
+}
+
+.videos-container h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: -2.5rem;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.videos-container h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #e74c3c;
+}
+
+
+.video-section-text {
+    padding: 4rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.video-section {
+    padding: 4rem 2rem;
+    background-color: #fef9f7;
+    text-align: justify;
+    color: #333;
+}
+
+.video-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color); /* اپنے رنگ سے بدلیں */
+}
+
+.video-section p {
+  font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Video Grid - Responsive Layout */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    padding: 2rem 10rem;
+}
+
+/* Video Card - Modern Design */
+.video-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Responsive YouTube Embed */
+.video-card iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* YouTube کا صحیح تناسب */
+    border: none;
+    border-radius: 6px 6px 0 0;
+}
+
+/* Video Card Content */
+.video-card-content {
+    padding: 1rem;
+    text-align: left;
+}
+
+.video-card h4 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #222;
+}
+
+.video-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.5rem 0;
+}
+
+.video-card a {
+    color: var(--secondary-color); /* اپنے رنگ سے بدلیں */
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+/* Hover Effect */
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Animation (Optional) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add this if you want animated cards */
+.video-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.video-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}

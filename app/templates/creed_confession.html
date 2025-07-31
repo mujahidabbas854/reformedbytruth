@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/creed_confession.css' %}" />
+{% endblock css %}
+{% block main %}
+
+<section class="creed-section">
+    <div class="creed-container">
+        <h1>Creeds And Confessions</h1>
+    </div>
+</section>
+
+<section class="creeds-section">
+   <div class="creeds-container">
+
+    {% for creed in creeds %}
+      <div class="creed-card">
+        <div class="image-container">
+          <img src="{{ creed.image.url }}" alt="{{ creed.title }}">
+        </div>
+        <p>{{ creed.title }}</p>
+        <a href="{{ creed.pdf.url }}" class="download-btn" download target="_blank">Download PDF</a>
+        <p class="share-text">Share on:</p>
+        <div class="share-buttons">
+          <a href="https://api.whatsapp.com/send?text=Check%20this%20PDF:%20{{ creed.full_pdf_url }}" target="_blank" class="btn whatsapp" title="Share on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+</a>
+{% comment %} <a href="https://x.com/intent/tweet?text=Check%20this%20PDF:%20{{ creed.full_pdf_url }}" target="_blank" class="btn twitter" title="Share on X">
+  <i class="fab fa-x-twitter"></i>
+</a> {% endcomment %}
+<a href="https://www.facebook.com/sharer/sharer.php?u={{ creed.full_pdf_url }}" target="_blank" class="btn facebook" title="Share on Facebook">
+  <i class="fab fa-facebook-f"></i>
+</a>
+        </div>
+      </div>
+    {% endfor %}
+
+    </div>
+</section>
+{% endblock main %}
+
+{% block js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock js %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static "css/blog.css" %}" />
+{% endblock css %}
+{% block main %}
+
+<section class="blog-section">
+        <div class="blog-container">
+            <h1>Blog</h1>
+        </div>
+      
+</section>
+
+    <section class="blog-grid">
+
+      {% for blog in blogs %}
+        <div class="blog-card">
+            <a href="{% url 'blog-detail' blog.id %}">
+                <div class="blog-img">
+                    <img src="{{ blog.image.url }}" alt="{{ blog.image }}">
+                </div>
+                <div class="blog-content">
+                    <p>{{ blog.created_at }}</p>
+                    <h3>{{ blog.name }}</h3>
+                </div>
+            </a>
+        </div>
+{% endfor %}
+</section>
+
+{% endblock main %}
+{% block js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock js %}

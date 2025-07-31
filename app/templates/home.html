@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static "css/home.css" %}" />
+{% endblock css %}
+{% block main %}
+
+<main>
+    <section class="hero-slideshow">
+        <div class="slide active">
+            <img src="{% static 'images/1-1.jpg' %}" alt="Image 1">
+            <div class="slide-content">
+                <p class="slide-text">JESUS said, “You will know the truth, and the truth will set you free.”</p>
+                <p class="slide-verse"><b>John 8:32</b></p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="{% static 'images/2-1.jpg' %}" alt="Image 2">
+            <div class="slide-content">
+                <p class="slide-text">The Christian is a person who makes it easy for others to believe in God.</p>
+                <p class="slide-verse"><b>Robert Murray M'Cheyne</b></p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="{% static 'images/3-1.jpg' %}" alt="Image 3">
+            <div class="slide-content">
+                <p class="slide-text">Seek the truth, listen to the truth, learn the truth, love the truth, tell the
+                    truth, abide by the truth, defend the truth even to death.</p>
+                <p class="slide-verse"><b>Jan Hus</b></p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="{% static 'images/4-1.jpg' %}" alt="Image 4">
+            <div class="slide-content">
+                <p class="slide-text">JESUS said to him, “I am the way, the truth, and the life. No one comes to the
+                    Father except through Me.”</p>
+                <p class="slide-verse"><b>John 14:6</b></p>
+            </div>
+        </div>
+
+        <button class="slide-nav prev" aria-label="Previous slide">&#10094;</button>
+        <button class="slide-nav next" aria-label="Next slide">&#10095;</button>
+    </section>
+
+
+
+    <section class="sermon-player">
+        <article class="sermon">
+            <img src="{% static 'images/audio_sermon.jpeg' %}" alt="History of Protestant Reformation" class="sermon-image" loading="lazy">
+            {% comment %} <img src="Home Images/Audio sermon .jpeg" alt="History of Protestant Reformation" class="sermon-image" loading="lazy"> {% endcomment %}
+            <div class="sermon-details">
+                <h3>History of Protestant Reformation and Martin Luther</h3>
+                <p class="author">Author: Suleman Shahzad</p>
+            </div>
+            <div class="audio-player">
+                {% comment %} <audio controls>
+                <img src="{% static 'audio/History-of-Protestant-Reformation-Martin-Luther.mp3' %}" type="audio/mpeg">
+                </audio> {% endcomment %}
+            <audio controls>
+            <source src="{% static 'audio/History-of-Protestant-Reformation-Martin-Luther.mp3' %}" type="audio/mpeg">
+            </audio>
+            <a href="{% url 'audio' %}" class="listen-link">Listen More, Click Here</a>
+            </div>
+        </article>
+
+        <article class="sermon">
+            <img src="{% static 'images/roo_ki_bydari.jpeg' %}" alt="Genealogy of Jesus" class="sermon-image" loading="lazy">
+            {% comment %} <img src="Home Images/roo ki bydari.jpeg" alt="Genealogy of Jesus" class="sermon-image" loading="lazy"> {% endcomment %}
+            <div class="sermon-details">
+                <h3>Genealogy of Jesus (Matthew 1:1-17)</h3>
+                <p class="author">Author: Suleman Shahzad</p>
+            </div>
+            <div class="audio-player">
+                <audio controls>
+                    <source src="{% static 'podcast/Genealogy_of_Jesus_(Matthew11-17).mp3' %}" type="audio/mpeg">
+                </audio>
+                <a href="{% url 'podcast' %}" class="listen-link">Listen More, Click Here</a>
+
+            </div>
+        </article>
+    </section>
+
+    <section class="video-hero">
+        <!-- Custom thumbnail background -->
+
+
+        <div class="video-overlay">
+            <h2>HOLINESS OF GOD</h2>
+            <p>The attributes of our sovereign Creator</p>
+            <button class="play-btn" onclick="playVideo()" aria-label="Play video">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+            </button>
+        </div>
+        <img src="{% static 'images/video_thumbnails_logo.png' %}" alt="Reformed By Truth" class="hero-logo" loading="lazy">
+
+        {% comment %} <img src="Home Images/Logo-1-01-fotor-20250122111918-removebg-preview.png" alt="Reformed By Truth" class="hero-logo" loading="lazy"> {% endcomment %}
+
+        <!-- YouTube Video hidden initially -->
+        <div id="video-container" style="display:none; position:absolute; top:0; left:0; width:100%; height:100%;">
+            <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/KHmstX0KTOI?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+        </div>
+    </section>
+
+
+   <div class="more-video">
+    <a href="{% url 'video' %}" class="listen-link">Listen More Video</a>
+   </div>
+
+    <section class="articles-section">
+        <h2>Articles</h2>
+
+        <div class="articles-carousel">
+            <div class="arrow left" id="prevArrow">
+                <span>&#10094;</span>
+            </div>
+            <div class="article-card" id="articleCard">
+                <a id="articleLink" href="What is Covenant of Grace.html">
+                    <div class="blog-img">
+                     <img src="{% static 'images/Articals_Imges/Article1.jpeg' %}" alt="What is Covenant of Grace">
+
+                        {% comment %} <img id="articleImg" src="Articals Imges/Article 1.jpeg" alt="What is Covenant of Grace"> {% endcomment %}
+                    </div>
+                    <div class="blog-content">
+                        <h3 id="articleTitle"></h3>
+                        <span class="category">Blog</span>
+                    </div>
+                </a>
+            </div>
+            <div class="arrow right" id="nextArrow">
+                <span>&#10095;</span>
+            </div>
+        </div>
+    </section>
+    <section class="feature-section">
+        <div class="cross-image">
+        <img src="{% static 'images/cross_image.jpg' %}" alt="Cross symbol" loading="lazy">
+
+            {% comment %} <img src="Home Images/crossImage.jpg" alt="Cross symbol" loading="lazy"> {% endcomment %}
+        </div>
+        <div class="feature-content">
+            <div class="feature-header">
+                <span class="cross-icon"></span>
+
+                <!-- Add this wrapper -->
+                <div class="support-method">
+                    <h2>Reformed By Truth</h2>
+                </div>
+
+            </div>
+
+            <p><br>
+                Reformed by Truth is a Christian educational platform committed to serving a global audience, with a
+                particular focus on the Urdu and Hindi-speaking world. Our mission is to glorify God and advance his
+                kingdom on earth by preaching the Gospel of Jesus Christ, His death, resurrection, and Second Coming—
+                teaching the Bible as it is written.
+                By all this to encourage and equip believers to live as God’s people, faithfully following His commands,
+                by providing accessible and sound biblical reformed teaching.
+            </p>
+
+           <div class="feature-footer">
+         <a href="{% url 'aboutus' %}" class="articles-btn">About Us</a>
+        </div>
+        </div>
+
+    </section>
+
+
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <span class="cta-subtitle">Reformed By Truth</span>
+            <h2 class="cta-title">Covenant God - Covenant People</h2>
+            <a href="https://donate.stripe.com/eVa6pg8kV8lMfMAfYY" target="_blank" class="give-btn">DONATE NOW</a>
+        {% comment %} <img src="{% static 'images/cta.jpg' %}" alt="CTA section" > {% endcomment %}
+
+        </div>
+    </section>
+</main>
+{% endblock main %}
+{% block js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock js %}
+

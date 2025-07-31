@@ -1,0 +1,249 @@
+/* content style */
+
+/* Blog Section Styles */
+.podcast-section {
+  background-color: #f8f9fa;
+  padding: 2rem; /* Match About Us padding */
+  font-family: 'Montserrat', sans-serif;
+}
+
+.podcast-container {
+  max-width: 800px; /* Match About Us max-width */
+  margin: 0 auto;
+  color: #333;
+}
+
+.podcast-container h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.podcast-container h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #e74c3c;
+}
+
+
+
+/* Gospel Header Styles */
+.gospel-header {
+    background-color: #f8f9fa;
+    padding: 1.5rem 0;
+    text-align: center;
+    margin: 2rem 0;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.gospel-titles h2 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 0;
+    padding: 0;
+}
+
+.gospel-titles h2 {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 10px;
+}
+.gospel-titles h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    /* background: linear-gradient(to right, #3498db, #9b59b6); */
+}
+
+.podcast-player {
+    padding: -10rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.podcast {
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    padding: 2rem;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ffffff, #f2f2f2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    transition: 0.3s ease;
+}
+
+.podcast:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.podcast-image {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.podcast-details {
+    flex: 1;
+    text-align: left;
+}
+
+.podcast-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.podcast-details p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    padding-right: 10px;
+}
+
+.audio-player audio {
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+}
+/* Coming Soon Container Styles */
+.coming-soon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 2rem auto;
+    gap: 1.5rem;
+}
+
+.coming-soon-section {
+    width: 100%;
+    padding: 1.5rem;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.coming-soon-section h1, 
+.coming-soon-section h2 {
+    
+    margin-bottom: 0.5rem;
+}
+
+.coming-soon-section h1 {
+    font-size: 1.8rem;
+}
+
+.coming-soon-section h2 {
+    font-size: 1.6rem;
+}
+
+.coming-soon-section p {
+    color: #95a5a6;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 0;
+}
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .coming-soon-section {
+        padding: 1rem;
+    }
+    
+    .coming-soon-section h1 {
+        font-size: 1.5rem;
+    }
+    
+    .coming-soon-section h2 {
+        font-size: 1.3rem;
+    }
+    
+    .coming-soon-section p {
+        font-size: 1rem;
+    }
+}
+.gospel-tabs {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .tab-buttons {
+    display: flex;
+    background: #222;
+  }
+
+  .tab-buttons button {
+    flex: 1;
+    padding: 15px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .tab-buttons button:hover,
+  .tab-buttons button.active {
+    background: #0066cc;
+  }
+
+  .tab-content {
+    display: none;
+    padding: 20px;
+    animation: fadeEffect 0.5s;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  @keyframes fadeEffect {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .sermon {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sermon-details {
+        text-align: center;
+    }
+
+    .sermon-image {
+        width: 100%;
+        height: auto;
+    }
+}

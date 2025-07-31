@@ -1,0 +1,44 @@
+:root {
+      --primary-color: #2c3e50;
+      /* --secondary-color: #e74c3c; */
+      --accent-color: #3498db;
+      /* --light-color: #ecf0f1; */
+      /* --dark-color: #2c3e50; */
+      --text-color: #333;
+      --text-light: #fff;
+      --font-main: 'Montserrat', sans-serif;
+      --transition: all 0.3s ease;
+
+    --dark-color: #111;
+	--light-color: #f4f4f4;
+	--secondary-color: #e63946;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-main);
+      color: var(--text-color);
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      	scroll-behavior: smooth;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      font-family: inherit;
+    }

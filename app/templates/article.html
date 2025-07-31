@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static "css/article.css" %}" />
+{% endblock css %}
+{% block main %}
+
+<section class="article-section">
+        <div class="article-container">
+            <h1>Articles(Urdu)</h1>
+        </div>
+      
+</section>
+
+    <section class="article-grid">
+
+      {% for article in articles %}
+        <div class="article-card">
+     <a href="{% url 'article_detail' article.id %}">
+                <div class="article-img">
+                    <img src="{{ article.image.url }}" alt="{{ article.image }}">
+                </div>
+                <div class="article-content">
+                    <p>{{ article.created_at }}</p>
+                    <h3>{{ article.name }}</h3>
+                </div>
+            </a>
+        </div>
+{% endfor %}
+</section>
+
+{% endblock main %}
+{% block js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock js %}
