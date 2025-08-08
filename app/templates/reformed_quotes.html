@@ -24,34 +24,58 @@
       <span class="close-btn" id="closeBtn">&times;</span>
       <img id="lightboxImg" src="" alt="Enlarged quote">
       <a id="downloadBtn" href="#" download class="download-btn">⬇</a>
+
+      <!-- Share Icons -->
+      <div class="share-icons" id="shareIcons">
+        <a id="whatsappShare" target="_blank" title="Share on WhatsApp">
+          <img src="{% static 'icons/whatsapp.svg' %}" alt="WhatsApp" />
+        </a>
+        <a id="facebookShare" target="_blank" title="Share on Facebook">
+          <img src="{% static 'icons/facebook.svg' %}" alt="Facebook" />
+        </a>
+        <a id="instagramShare" target="_blank" title="Share on Instagram">
+          <img src="{% static 'icons/instagram.svg' %}" alt="Instagram" />
+        </a>
+      </div>
     </div>
   </div>
 </main>
 
 <script>
-    const images = document.querySelectorAll('.gallery-img img');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const closeBtn = document.getElementById('closeBtn');
-    const downloadBtn = document.getElementById('downloadBtn');
+  const images = document.querySelectorAll('.gallery-img img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('closeBtn');
+  const downloadBtn = document.getElementById('downloadBtn');
 
-    images.forEach(img => {
-      img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
-        downloadBtn.href = img.src;
-      });
+  const whatsappShare = document.getElementById('whatsappShare');
+  const facebookShare = document.getElementById('facebookShare');
+  const instagramShare = document.getElementById('instagramShare');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      const imgSrc = img.src;
+      lightbox.style.display = 'flex';
+      lightboxImg.src = imgSrc;
+      downloadBtn.href = imgSrc;
+
+      // Share links
+      const encodedURL = encodeURIComponent(imgSrc);
+      whatsappShare.href = `https://wa.me/?text=${encodedURL}`;
+      facebookShare.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedURL}`;
+      instagramShare.href = `https://www.instagram.com/`; // Instagram doesn't support direct image sharing
     });
+  });
 
-    closeBtn.addEventListener('click', () => {
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
       lightbox.style.display = 'none';
-    });
-
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-      }
-    });
+    }
+  });
 </script>
 
 {% endblock main %}

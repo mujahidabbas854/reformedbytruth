@@ -60,7 +60,7 @@
                 <img src="{% static 'audio/History-of-Protestant-Reformation-Martin-Luther.mp3' %}" type="audio/mpeg">
                 </audio> {% endcomment %}
             <audio controls>
-            <source src="{% static 'audio/History-of-Protestant-Reformation-Martin-Luther.mp3' %}" type="audio/mpeg">
+            <source src="{% static 'Home_Page_Audio_Podcast/History-of-Protestant-Reformation-Martin-Luther.mp3' %}" type="audio/mpeg">
             </audio>
             <a href="{% url 'audio' %}" class="listen-link">Listen More, Click Here</a>
             </div>
@@ -75,7 +75,7 @@
             </div>
             <div class="audio-player">
                 <audio controls>
-                    <source src="{% static 'podcast/Genealogy_of_Jesus_(Matthew11-17).mp3' %}" type="audio/mpeg">
+                    <source src="{% static 'Home_Page_Audio_Podcast/Genealogy_of_Jesus_Matthew11-17.mp3' %}" type="audio/mpeg">
                 </audio>
                 <a href="{% url 'podcast' %}" class="listen-link">Listen More, Click Here</a>
 
@@ -112,30 +112,98 @@
    </div>
 
     <section class="articles-section">
-        <h2>Articles</h2>
+    <h2>Articles</h2>
 
-        <div class="articles-carousel">
-            <div class="arrow left" id="prevArrow">
-                <span>&#10094;</span>
-            </div>
-            <div class="article-card" id="articleCard">
-                <a id="articleLink" href="What is Covenant of Grace.html">
-                    <div class="blog-img">
-                     <img src="{% static 'images/Articals_Imges/Article1.jpeg' %}" alt="What is Covenant of Grace">
-
-                        {% comment %} <img id="articleImg" src="Articals Imges/Article 1.jpeg" alt="What is Covenant of Grace"> {% endcomment %}
-                    </div>
-                    <div class="blog-content">
-                        <h3 id="articleTitle"></h3>
-                        <span class="category">Blog</span>
-                    </div>
-                </a>
-            </div>
-            <div class="arrow right" id="nextArrow">
-                <span>&#10095;</span>
-            </div>
+    <div class="articles-carousel">
+        <div class="arrow left" id="prevArrow">
+            <span>&#10094;</span>
         </div>
-    </section>
+
+        <!-- Sirf ek card banayenge jo JS se update hoga -->
+        <div class="article-card">
+            <a id="articleLink" href="#">
+                <div class="blog-img">
+                    <img id="articleImg" src="" alt="">
+                </div>
+                <div class="blog-content">
+                    <h3 id="articleTitle"></h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="arrow right" id="nextArrow">
+            <span>&#10095;</span>
+        </div>
+    </div>
+</section>
+
+
+
+
+<script>
+const articles = [
+    {% for blog in blogs %}
+    {
+        image: "{{ blog.image.url|escapejs }}",
+        title: "{{ blog.name|escapejs }}",
+        link: "{% url 'blog-detail' blog.id %}"
+    }{% if not forloop.last %},{% endif %}
+    {% endfor %}
+];
+
+let currentIndex = 0;
+const articleImg = document.getElementById("articleImg");
+const articleTitle = document.getElementById("articleTitle");
+const articleLink = document.getElementById("articleLink");
+const prevArrow = document.getElementById("prevArrow");
+const nextArrow = document.getElementById("nextArrow");
+
+function updateArticle(index) {
+    const article = articles[index];
+    articleImg.src = article.image;
+    articleImg.alt = article.title;
+    articleTitle.textContent = article.title;
+    articleLink.href = article.link;
+
+    if (index === 0) {
+        prevArrow.classList.add("disabled");
+        prevArrow.style.visibility = "hidden";
+    } else {
+        prevArrow.classList.remove("disabled");
+        prevArrow.style.visibility = "visible";
+    }
+
+    if (index === articles.length - 1) {
+        nextArrow.classList.add("disabled");
+        nextArrow.style.visibility = "hidden";
+    } else {
+        nextArrow.classList.remove("disabled");
+        nextArrow.style.visibility = "visible";
+    }
+}
+
+prevArrow.addEventListener("click", () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateArticle(currentIndex);
+    }
+});
+
+nextArrow.addEventListener("click", () => {
+    if (currentIndex < articles.length - 1) {
+        currentIndex++;
+        updateArticle(currentIndex);
+    }
+});
+
+updateArticle(currentIndex);
+</script>
+
+
+
+
+
+    
     <section class="feature-section">
         <div class="cross-image">
         <img src="{% static 'images/cross_image.jpg' %}" alt="Cross symbol" loading="lazy">

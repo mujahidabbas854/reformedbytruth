@@ -15,23 +15,15 @@ from .models import Article
 
 from .models import ReformedQuote
 
+from .models import Course
+
+
 
 
 # Create your views here.
 def home(request):
-    # try:
-    #     rq_user = request.session.get("user_id")
-    # except:
-    #     pass
-    # if rq_user != None:
-    #     # dbuser = models.SignUp.objects.get(id=rq_user)
-    #     data = {
-    #         "logged": True,
-    #         "full_name": dbuser.full_name,
-    #     }
-    #     return render(request, 'index.html', data)
-    # else:
-        return render(request, "home.html")
+    blogs = Blog.objects.all().order_by('?')  # Random order, sabhi blogs
+    return render(request, "home.html", {"blogs": blogs})
 
 def supportus(request):
     return render(request, "supportus.html")
@@ -81,9 +73,6 @@ def book_view(request):
         book.full_pdf_url = request.build_absolute_uri(book.pdf.url)
     return render(request, 'book.html', {'books': books})
 
-def courses(request):
-    return render(request, "courses.html")
-
 def creed_confession_view(request):
     creeds = Creed.objects.all()
     for creed in creeds:
@@ -109,5 +98,21 @@ def reformed_quotes(request):
     quotes = ReformedQuote.objects.all()
     return render(request, 'reformed_quotes.html', {'quotes': quotes})
 
-def courses_detail(request):
-    return render(request, 'courses_detail.html')
+def courses(request):
+    all_courses = Course.objects.all()
+    return render(request, "courses.html", {"courses": all_courses})
+
+# def courses_detail(request):
+#     return render(request, 'courses_detail.html')
+
+def course_detail(request, slug):
+    course = get_object_or_404(Course, slug=slug)
+    videos_by_section = {}
+    for video in course.videos.all():  # course.videos is still valid because of related_name
+        section = video.section
+        videos_by_section.setdefault(section, []).append(video)
+
+    return render(request, 'courses_detail.html', {
+        'course': course,
+        'videos_by_section': videos_by_section
+    })

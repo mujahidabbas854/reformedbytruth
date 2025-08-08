@@ -100,3 +100,22 @@
     color: red;
   }
   
+  .share-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.share-icons a img {
+  width: 32px;
+  height: 32px;
+  filter: brightness(100%);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.share-icons a:hover img {
+  transform: scale(1.2);
+  opacity: 0.8;
+}

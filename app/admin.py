@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Blog, Audio, Video, Category, Subcategory, Creed, Book, Article, ReformedQuote
+from .models import Blog, Audio, Video, Category, Subcategory, Creed, Book, Article, ReformedQuote, Course, CourseVideo
 
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
@@ -40,3 +40,16 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ["id","name","author_name", "created_at"]
 
 admin.site.register(ReformedQuote)
+
+
+class CourseVideoInline(admin.TabularInline):
+    model = CourseVideo
+    extra = 1
+
+@admin.register(Course)
+class CourseAdmin(admin.ModelAdmin):
+    list_display = ['title', 'course_type']
+    prepopulated_fields = {'slug': ('title',)}
+    inlines = [CourseVideoInline]
+
+admin.site.register(CourseVideo)

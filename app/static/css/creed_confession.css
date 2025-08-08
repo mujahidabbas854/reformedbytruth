@@ -1,145 +1,92 @@
-* Content Style */
-
-/* Blog Section Styles */
+/* Creed Heading Section */
 .creed-section {
   background-color: #f8f9fa;
-  padding: 2rem; /* Match About Us padding */
+  padding: 60px 20px 30px;
   font-family: 'Montserrat', sans-serif;
 }
 
 .creed-container {
-  max-width: 800px; /* Match About Us max-width */
+  max-width: 800px;
   margin: 0 auto;
   color: #333;
 }
 
 .creed-container h1 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: -2rem;
-    color: #2c3e50;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
 }
 
 .creed-container h1::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background-color: #e74c3c;
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: #e74c3c;
 }
 
-
-
-
-
-
+/* Creed Cards Section */
 .creeds-section {
-    text-align: center;
-    padding: 50px 20px;
-  }
-  
-  .creeds-section h2 {
-    font-size: 32px;
-    color: #2d0c00;
-    margin-bottom: 30px;
-  }
-  
-  .creeds-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-  }
-  
-  .creed-card {
-    width: 280px;
-    background: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .image-container {
-    overflow: hidden;
-    border-radius: 5px;
-  }
-  
-  .image-container img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.4s ease;
-  }
-  
-  .creed-card:hover .image-container img {
-    transform: scale(1.1);
-  }
-  
-  .creed-card p {
-    margin: 10px 0;
-    color: #333;
-    font-weight: bold;
-  }
-  
-  .download-btn {
-    display: inline-block;
-    background-color: #004070;
-    color: white;
-    padding: 8px 14px;
-    border-radius: 4px;
-    text-decoration: none;
-    margin-bottom: 10px;
-    transition: background 0.3s;
-  }
-  
-  .download-btn:hover {
-    background-color: #0060a0;
-  }
-  
-  .share-buttons {
-    display: flex;
-    justify-content:center;
-    gap: 15px;
-    margin-top: 12px;
-  }
-  
-  .share-buttons .btn {
-    width: 30px;
-    height: 30px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 22px;
-    text-decoration: none;
-    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2);
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .share-buttons .btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Platform Colors */
-  .btn.whatsapp { background: #25D366; }
-  .btn.twitter { background: #000000; }
-  .btn.instagram {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  }
-  .btn.facebook { background: #3b5998; }
-  .share-text {
-    text-align: center;
-    margin-top: 6px;
-    font-weight: bold;
-    font-size: 14px;
-    color: #444;
-    font-family:'Courier New', Courier, monospace;
-  }
+  padding: 60px 20px;
+  background-color: #f4f4f4;
+}
+
+.creeds-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.creed-card-alt {
+  width: 280px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-left: 6px solid #004070;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.creed-card-alt:hover {
+  transform: translateY(-6px);
+}
+
+.creed-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.creed-content {
+  padding: 15px 20px;
+  text-align: left;
+}
+
+.creed-content h3 {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-family: 'Georgia', serif;
+}
+
+.view-link {
+  display: inline-block;
+  font-size: 14px;
+  color: #004070;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.view-link:hover {
+  color: #0060a0;
+}

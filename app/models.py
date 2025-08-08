@@ -78,3 +78,31 @@ class ReformedQuote(models.Model):
 
     def __str__(self):
         return self.alt_text or f"Quote Image {self.id}"
+
+
+class Course(models.Model):
+    COURSE_TYPES = [
+        ('BOOTCAMP', 'Bootcamp'),
+        ('WEBINAR', 'Webinar'),
+        ('WORKSHOP', 'Workshop'),
+    ]
+
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    course_type = models.CharField(max_length=20, choices=COURSE_TYPES)
+    thumbnail = models.ImageField(upload_to='courses/thumbnails/')
+    slug = models.SlugField(unique=True)
+
+    def __str__(self):
+        return self.title
+
+
+class CourseVideo(models.Model):  # Renamed model
+    course = models.ForeignKey(Course, related_name='videos', on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    video_file = models.FileField(upload_to='courses/videos/')
+    duration = models.CharField(max_length=20)  # e.g. "(0:10)"
+    section = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"{self.course.title} - {self.title}"

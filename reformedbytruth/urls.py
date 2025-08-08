@@ -27,9 +27,9 @@ urlpatterns =[
     path('article/<int:id>/', views.article_detail, name='article_detail'),
     path('book/', views.book_view, name='book'),
     path('courses', views.courses, name='courses'),
+    path('courses/<slug:slug>/', views.course_detail, name='courses_detail'),
     path('creed_confession/', views.creed_confession_view, name='creed_confession'),
     path('reformed_quotes/', views.reformed_quotes, name='reformed_quotes'),
-    path('courses_detail/', views.courses_detail, name='courses_detail'),
 
 ]
 

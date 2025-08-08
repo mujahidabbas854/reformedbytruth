@@ -12,32 +12,21 @@
 </section>
 
 <section class="creeds-section">
-   <div class="creeds-container">
-
-    {% for creed in creeds %}
-      <div class="creed-card">
-        <div class="image-container">
-          <img src="{{ creed.image.url }}" alt="{{ creed.title }}">
+    <div class="creeds-container">
+        {% for creed in creeds %}
+        <div class="creed-card-alt">
+            <div class="creed-image">
+                <img src="{{ creed.image.url }}" alt="{{ creed.title }}">
+            </div>
+            <div class="creed-content">
+                <h3>{{ creed.title }}</h3>
+                <a href="{{ creed.pdf.url }}" target="_blank" class="view-link">View PDF</a>
+            </div>
         </div>
-        <p>{{ creed.title }}</p>
-        <a href="{{ creed.pdf.url }}" class="download-btn" download target="_blank">Download PDF</a>
-        <p class="share-text">Share on:</p>
-        <div class="share-buttons">
-          <a href="https://api.whatsapp.com/send?text=Check%20this%20PDF:%20{{ creed.full_pdf_url }}" target="_blank" class="btn whatsapp" title="Share on WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-</a>
-{% comment %} <a href="https://x.com/intent/tweet?text=Check%20this%20PDF:%20{{ creed.full_pdf_url }}" target="_blank" class="btn twitter" title="Share on X">
-  <i class="fab fa-x-twitter"></i>
-</a> {% endcomment %}
-<a href="https://www.facebook.com/sharer/sharer.php?u={{ creed.full_pdf_url }}" target="_blank" class="btn facebook" title="Share on Facebook">
-  <i class="fab fa-facebook-f"></i>
-</a>
-        </div>
-      </div>
-    {% endfor %}
-
+        {% endfor %}
     </div>
 </section>
+
 {% endblock main %}
 
 {% block js %}
